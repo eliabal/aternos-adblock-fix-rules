@@ -1,0 +1,130 @@
+{
+  "version": "2026-07-04-01",
+  "minExtensionVersion": "2.0",
+  "lastUpdate": "2026-07-04T15:00:00Z",
+  "notes": "Informational field. Not used at runtime.",
+  "overlay": {
+    "enabled": true,
+    "selectors": [
+      ":not(body)[style*=\"background\"][style*=\"#F62451\"]",
+      ":not(body)[style*=\"background\"][style*=\"#f62451\"]",
+      ":not(body)[style*=\"background\"][style*=\"246, 36, 81\"]",
+      ":not(html):not(body):not(.body)[style*=\"vw\"][style*=\"vh\"][style*=\"fixed\"]"
+    ],
+    "hideStyle": "opacity:0.001!important;pointer-events:none!important;transition:none!important;animation:none!important"
+  },
+  "sidebar": {
+    "selectors": [
+      "aside.sidebar",
+      ".responsive-leaderboard",
+      ".responsive-sky-scraper",
+      ".ad-replacement",
+      ".ad-label-wrapper",
+      ".header-link-exaroton",
+      ".placement"
+    ],
+    "hideStyle": "display:none!important"
+  },
+  "computedStyleHook": {
+    "matchValues": [
+      "F62451",
+      "f62451",
+      "246, 36, 81"
+    ],
+    "excludeTags": [
+      "BODY"
+    ],
+    "fakeOpacity": "1"
+  },
+  "guardian": {
+    "enabled": false,
+    "minDescendants": 6,
+    "minText": 60,
+    "maxReattach": 60,
+    "brakeWindowMs": 8000,
+    "brakeMaxActs": 24,
+    "brakeGraceMs": 3000,
+    "liveRegions": ["#console"],
+    "statusClassSel": ".console, .server-actions, .server-status",
+    "statusStates": ["online", "offline", "starting", "stopping", "restarting", "saving", "loading", "crashed", "preparing", "queueing", "pending", "waiting", "error"]
+  },
+  "start": {
+    "enabled": true,
+    "agetFn": "aget",
+    "isOfflineFn": "isServerOffline",
+    "endpoint": "/ajax/server/start",
+    "statusPath": ["data", "status"],
+    "versionPath": ["data", "version"],
+    "eulaStatus": "eula",
+    "updateStatus": "update",
+    "acceptEulaFlag": "acceptEula",
+    "updateFlag": "update",
+    "dismissUpdateFlag": "dismissUpdate",
+    "eulaConfirmMsg": "Per avviare il server devi accettare la Minecraft EULA (https://www.minecraft.net/eula).\n\nAccettare e avviare?",
+    "updateConfirmMsg": "È disponibile un aggiornamento del server{v}.\n\nOK = aggiorna e avvia · Annulla = avvia la versione attuale",
+    "stopFn": "stop",
+    "restartFn": "restart",
+    "gateSelectors": [
+      ":not(html):not(body)[style*=\"vw\"][style*=\"vh\"]",
+      ":not(html):not(body)[style*=\"10080\"]",
+      ":not(html):not(body)[style*=\"#F62451\"]",
+      ":not(html):not(body)[style*=\"#f62451\"]"
+    ]
+  },
+  "reveal": {
+    "enabled": true,
+    "shellSelector": "div.body",
+    "contentTargets": [".page-content", "section.content", "main.main"],
+    "stashControlSel": "input,select,textarea,button,[class*=\"option\"],.config-option,.file",
+    "stashMinControls": 3,
+    "stashMinTextLen": 400,
+    "decoyIdPattern": "^[A-Za-z]{12,}$"
+  },
+  "rewire": {
+    "enabled": true,
+    "agetFn": "aget",
+    "_gateSelectors_REMOVED": "Intentionally omitted — see HOTFIX note. inject.js _rwCfg corrupts a remotely-merged array; falling back to the bundled gateSelectors array keeps _rwGate working.",
+    "option": {
+      "enabled": true,
+      "endpoint": "/ajax/server/options/set-config-option",
+      "containerSel": "[data-option]",
+      "filePathSel": "[data-path]",
+      "outputValueSel": ".config-option-output-value",
+      "saveIconSel": ".options-save",
+      "selectSel": ".select",
+      "selectListSel": ".select-options",
+      "optionSel": ".option",
+      "currentClass": "current",
+      "numberStepSel": ".input-number-up,.input-number-down",
+      "numberContainerSel": ".config-option-number",
+      "savableContainerSel": ".type-input.savable",
+      "savableIconSel": ".type-input.savable .type-input-icon",
+      "savableTypeInputSel": ".type-input",
+      "savableClass": "savable",
+      "savableIconISel": ".type-input-icon i",
+      "savableDirtyIcon": "fa-solid fa-save",
+      "savableCheckIcon": "fa-solid fa-check",
+      "uploadResourcePackSel": ".upload-resource-pack",
+      "mcformatInputSel": ".config-option-mcformat-input",
+      "mcformatOutputSel": ".mcformat-output",
+      "mcformatEditSel": ".config-option-mcformat-edit"
+    },
+    "console": {
+      "enabled": true,
+      "inputSel": "#c-input",
+      "streamGlobal": "Legilimens",
+      "streamName": "console"
+    },
+    "fileSave": {
+      "enabled": true,
+      "endpoint": "/ajax/server/files/save",
+      "buttonSel": ".path-button-save",
+      "pathSel": "[data-path]",
+      "editorSel": "textarea, .cm-content, [contenteditable=\"true\"]",
+      "deleteButtonSel": ".js-delete-file",
+      "deleteEndpoint": "/ajax/server/files/delete",
+      "deleteRowSel": ".action-row",
+      "deleteConfirmMsg": "Vuoi davvero eliminare questo file?"
+    }
+  }
+}
