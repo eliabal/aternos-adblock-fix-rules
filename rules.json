@@ -1,7 +1,7 @@
 {
-  "version": "2026-07-04-01",
+  "version": "2026-11-05-01",
   "minExtensionVersion": "2.0",
-  "lastUpdate": "2026-07-04T15:00:00Z",
+  "lastUpdate": "2026-11-05T08:31:35Z",
   "notes": "Informational field. Not used at runtime.",
   "overlay": {
     "enabled": true,
@@ -36,6 +36,15 @@
     ],
     "fakeOpacity": "1"
   },
+  "sim": {
+    "_why": "Nomi dei registri d-errore che il verificatore di Aternos legge: se NON sono vuoti mostra l-avviso a tutto schermo (codice bits<<4|9). Ruotano a ogni deploy. Misurati 2026-11-05: RIUFOaVVqYhw conteneva [2,4] -> codice 329.",
+    "sdkErrorArrays": [
+      "RIUFOaVVqYhw",
+      "EVVStrzcEpuE",
+      "inPCxASIwosa",
+      "TkjoOOJOsFyU"
+    ]
+  },
   "guardian": {
     "enabled": false,
     "minDescendants": 6,
@@ -44,17 +53,39 @@
     "brakeWindowMs": 8000,
     "brakeMaxActs": 24,
     "brakeGraceMs": 3000,
-    "liveRegions": ["#console"],
+    "liveRegions": [
+      "#console"
+    ],
     "statusClassSel": ".console, .server-actions, .server-status",
-    "statusStates": ["online", "offline", "starting", "stopping", "restarting", "saving", "loading", "crashed", "preparing", "queueing", "pending", "waiting", "error"]
+    "statusStates": [
+      "online",
+      "offline",
+      "starting",
+      "stopping",
+      "restarting",
+      "saving",
+      "loading",
+      "crashed",
+      "preparing",
+      "queueing",
+      "pending",
+      "waiting",
+      "error"
+    ]
   },
   "start": {
     "enabled": true,
     "agetFn": "aget",
     "isOfflineFn": "isServerOffline",
     "endpoint": "/ajax/server/start",
-    "statusPath": ["data", "status"],
-    "versionPath": ["data", "version"],
+    "statusPath": [
+      "data",
+      "status"
+    ],
+    "versionPath": [
+      "data",
+      "version"
+    ],
     "eulaStatus": "eula",
     "updateStatus": "update",
     "acceptEulaFlag": "acceptEula",
@@ -74,7 +105,11 @@
   "reveal": {
     "enabled": true,
     "shellSelector": "div.body",
-    "contentTargets": [".page-content", "section.content", "main.main"],
+    "contentTargets": [
+      ".page-content",
+      "section.content",
+      "main.main"
+    ],
     "stashControlSel": "input,select,textarea,button,[class*=\"option\"],.config-option,.file",
     "stashMinControls": 3,
     "stashMinTextLen": 400,
