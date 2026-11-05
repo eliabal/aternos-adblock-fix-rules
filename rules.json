@@ -1,7 +1,7 @@
 {
-  "version": "2026-11-05-01",
+  "version": "2026-11-05-02",
   "minExtensionVersion": "2.0",
-  "lastUpdate": "2026-11-05T08:31:35Z",
+  "lastUpdate": "2026-11-05T14:20:53Z",
   "notes": "Informational field. Not used at runtime.",
   "overlay": {
     "enabled": true,
@@ -37,7 +37,6 @@
     "fakeOpacity": "1"
   },
   "sim": {
-    "_why": "Nomi dei registri d-errore che il verificatore di Aternos legge: se NON sono vuoti mostra l-avviso a tutto schermo (codice bits<<4|9). Ruotano a ogni deploy. Misurati 2026-11-05: RIUFOaVVqYhw conteneva [2,4] -> codice 329.",
     "sdkErrorArrays": [
       "RIUFOaVVqYhw",
       "EVVStrzcEpuE",
